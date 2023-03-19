@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: mage-sim
+  name: mage-sim
+  namespace: default
+spec:
+  clusterIP: 10.103.32.66
+  clusterIPs:
+  - 10.103.32.66
+  externalTrafficPolicy: Cluster
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - nodePort: 32159
+    port: 8000
+    protocol: TCP
+    targetPort: 8000
+  selector:
+    app: mage-sim
+  sessionAffinity: None
+  type: NodePort
