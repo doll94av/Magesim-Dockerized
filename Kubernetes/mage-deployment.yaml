@@ -5,6 +5,7 @@ metadata:
   labels:
     app: mage-sim
   name: mage-sim
+  namespace: mage-sim
 spec:
   replicas: 1
   selector:
